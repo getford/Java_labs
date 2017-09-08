@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="org.glassfish:javax.servlet:Release" type="repository">
+    <properties maven-id="org.glassfish:javax.servlet:RELEASE" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/javax.servlet/10.0-b28/javax.servlet-10.0-b28.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/javax.servlet/10.0-b28/javax.servlet-10.0-b28-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
