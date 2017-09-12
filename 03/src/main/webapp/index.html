@@ -13,39 +13,42 @@
     <input type="hidden" name="click" value="value">
     <button type="submit">Клац</button>
 </form>
-<!--<hr/>
-<h5>Переопределение запроса с сервлета Sss на Ggg с параметрами</h5>
-<form action="/Sss" method="get">
-    <input type="hidden" name="click" value="Ggg">
-    <input type="text" name="value" placeholder="Parameter">
-    <button type="submit">Клац</button>
-</form>-->
 <hr/>
 <h5>POST запрос сервлета Sss</h5>
 <form action="/Sss" method="post">
     <input type="hidden" name="click" value="value1">
     <button type="submit">Клац</button>
 </form>
-
-
-
-<!--<h4>GET (С параметрами)</h4>
 <hr/>
-<form action="Sss" method="get">
-    <input type="text" name="fn" placeholder="firstname">
-    <br/>
-    <input type="text" name="ln" placeholder="lastname">
-    <br/>
-    <button type="submit" name="send">Send</button>
+<h5>Переопределение POST запроса с сервлета Sss на Ggg</h5>
+<form action="/Sss" method="post">
+    <input type="hidden" name="click" value="value2">
+    <button type="submit">Клац</button>
 </form>
-<h4>POST (С параметрами)</h4>
 <hr/>
-<form action="Sss" method="post">
-    <input type="text" name="fn" placeholder="firstname">
-    <br/>
-    <input type="text" name="ln" placeholder="lastname">
-    <br/>
-    <button type="submit">Send</button>
-</form>-->
+<h5>Переопределение GET запроса на html страницу</h5>
+<form action="/Sss" method="get">
+    <input type="hidden" name="click" value="value3">
+    <button type="submit">Клац</button>
+</form>
+<hr/>
+<h5>Переопределение GET запроса Sss -> Ggg -> html страницу</h5>
+<form action="/Sss" method="post">
+    <input type="hidden" name="click" value="value4">
+    <button type="submit">Клац</button>
+</form>
+<hr/>
+<h5>Переопределение запроса с сервлета Sss на Ggg с параметрами</h5>
+<form action="/Sss" method="get">
+    <input type="hidden" name="click" value="value5">
+    <input type="text" name="param5" placeholder="Parameter">
+    <button type="submit">Клац</button>
+</form>
+<hr/>
+<h5>GET-запрос Sss -> Ggg с помощью классов пакета org.appache.commons.httpclient</h5>
+<form action="/Sss" method="get">
+    <input type="hidden" name="click" value="value6">
+    <button type="submit">Клац</button>
+</form>
 </body>
 </html>

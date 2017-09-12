@@ -32,6 +32,20 @@ public class Ggg extends HttpServlet {
         super.service(req, resp);
         resp.setContentType("text/html;charset=utf-8");
         System.out.println("Ggg:service");
+
+        PrintWriter printWriter = resp.getWriter();
+
+        String _click = req.getParameter("click");
+
+        if (_click.equalsIgnoreCase("value4")) {
+            resp.sendRedirect("/redirect.html");
+        }
+
+        if (_click.equalsIgnoreCase("value5")) {
+            String param5 = req.getParameter("param5");
+
+            printWriter.println("<br/><h4>Parameter: " + param5 + "</h4>");
+        }
     }
 
     @Override
@@ -41,7 +55,7 @@ public class Ggg extends HttpServlet {
         System.out.println("Ggg:doGet");
 
         PrintWriter printWriter = resp.getWriter();
-        printWriter.println("Servlet Ggg (doGet)");
+        printWriter.println("Servlet Ggg");
     }
 
     @Override

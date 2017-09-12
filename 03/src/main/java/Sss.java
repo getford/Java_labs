@@ -1,3 +1,6 @@
+import org.apache.commons.httpclient.HttpClient;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,21 +35,43 @@ public class Sss extends HttpServlet {
         super.service(req, resp);
         System.out.println("Sss:service");
 
+        RequestDispatcher requestDispatcher = null; // Данные будут доступны другому сервлету
+
         String _click = req.getParameter("click");
 
         PrintWriter printWriter = resp.getWriter();
 
 
-        if(_click == null){     // По гиперссылке
+        if (_click == null) {     // По гиперссылке
             printWriter.println("Sss:doGet");
-        }
+        } else {
 
-        if (_click.equalsIgnoreCase("value")) { // переадресация на Ggg
-            resp.sendRedirect("/Ggg");
-        }
+            if (_click.equalsIgnoreCase("value")) { // переадресация на Ggg
+                resp.sendRedirect("/Ggg");
+            }
 
-        if (_click.equalsIgnoreCase("value1")) {    // POST запрос с Sss
-            printWriter.println("Sss:POST in service");
+            if (_click.equalsIgnoreCase("value1")) {    // POST запрос с Sss
+                printWriter.println("Sss:POST in service");
+            }
+
+            if (_click.equalsIgnoreCase("value2")) {
+                resp.sendRedirect("/Ggg?param2=Zhigalo");
+                printWriter.println("<br/>POST Sss -> Ggg");
+            }
+
+            if (_click.equalsIgnoreCase("value3")) {
+                resp.sendRedirect("/redirect.html");
+            }
+
+            if (_click.equalsIgnoreCase("value4")) {
+                requestDispatcher = req.getRequestDispatcher("/Ggg");
+                requestDispatcher.forward(req, resp);
+            }
+
+            if(_click.equalsIgnoreCase("value5")){
+                requestDispatcher = req.getRequestDispatcher("/Ggg");
+                requestDispatcher.forward(req, resp);
+            }
         }
     }
 
@@ -66,3 +91,7 @@ public class Sss extends HttpServlet {
 
     }
 }
+
+/*
+Задание 6: https://toster.ru/q/349134
+ */
