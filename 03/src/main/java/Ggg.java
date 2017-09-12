@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "Ggg", urlPatterns = "/Ggg")
 public class Ggg extends HttpServlet {
@@ -29,19 +30,23 @@ public class Ggg extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.service(req, resp);
+        resp.setContentType("text/html;charset=utf-8");
         System.out.println("Ggg:service");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        //  super.doGet(req, resp);
+        resp.setContentType("text/html;charset=utf-8");
         System.out.println("Ggg:doGet");
 
+        PrintWriter printWriter = resp.getWriter();
+        printWriter.println("Servlet Ggg (doGet)");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        //  super.doPost(req, resp);
         System.out.println("Ggg:doPost");
     }
 }
