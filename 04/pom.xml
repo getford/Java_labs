@@ -25,6 +25,16 @@
             <version>LATEST</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xbean</groupId>
+            <artifactId>xbean-reflect</artifactId>
+            <version>3.4</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>04</finalName>
