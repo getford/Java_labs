@@ -13,13 +13,16 @@ public class Time {
     private int dayOfMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 
     private String rc;
-    private String[][] listDays = new String[0][];
+
+    private int ni = 7;
+    private int nj = 2;
+
+    private String[][] listDays = new String[ni][nj];
 
     public Time() {
     }
 
     public void PrintHello(int hour) {
-
         if (hour > 0 && hour <= 5)
             setRc("Good night");
         else if (hour > 5 && hour < 12)
@@ -34,8 +37,6 @@ public class Time {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(".MM.yyyy");
         String formatDate = simpleDateFormat.format(date);
 
-        int ni = 7;
-        int nj = 2;
         String arr[][] = new String[ni][nj];
 
         for (int i = 0; i < ni; i++) {
@@ -50,9 +51,9 @@ public class Time {
                         dayOfWeek = 1;
                     arr[i][j] = "" + dayOfWeek++;
                 }
-                System.out.print(arr[i][j] + "\t");
+                // System.out.print(arr[i][j] + "\t");
             }
-            System.out.println();
+            // System.out.println();
         }
         setListDays(arr);
     }
