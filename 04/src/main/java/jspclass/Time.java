@@ -5,6 +5,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Time {
+   // private static final Logger log = Logger.getLogger(Time.class);
+
     private Calendar calendar = Calendar.getInstance();
     private Date date = new Date();
     private int hour = calendar.get(Calendar.HOUR_OF_DAY);
@@ -31,9 +33,12 @@ public class Time {
             setRc("Good afternoon");
         else
             setRc("Good evening");
+
+     //   log.info(getRc());
     }
 
     public void ArrayDates(int day, int dayOfWeek, int dayOfMonth, Date date) {
+       // log.info("Method:ArrayDates");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(".MM.yyyy");
         String formatDate = simpleDateFormat.format(date);
 

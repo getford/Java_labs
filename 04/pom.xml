@@ -35,6 +35,11 @@
             <artifactId>xbean-reflect</artifactId>
             <version>3.4</version>
         </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.12</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>04</finalName>

@@ -20,8 +20,12 @@
     }
 %>
 <hr/>
-
-<button type="submit" name="page">press</button>
-<%@include file="afternoon.jsp" %>
+<jsp:include page="morning.jsp" flush="true"/>
+<hr/>
+<jsp:forward page="night.jsp"/>
+<hr/>
+<form action="<c:url value="/Jjj"/>" method="post">
+    <input type="submit" name="press">
+</form>
 </body>
 </html>
