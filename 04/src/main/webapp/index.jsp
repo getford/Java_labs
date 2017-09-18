@@ -23,9 +23,9 @@
 <form action="<c:url value="/Jjj"/>" method="post">
     <input type="submit" name="press">
 </form>
+<%--<hr/>
+<jsp:include page="morning.jsp"/>
 <hr/>
-<jsp:include page="morning.jsp" flush="true"/>
-<hr/>
-<jsp:forward page="night.jsp"/>
+<jsp:forward page="night.jsp"/>--%>
 </body>
 </html>

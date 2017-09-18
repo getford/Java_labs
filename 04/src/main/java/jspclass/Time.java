@@ -1,11 +1,13 @@
 package jspclass;
 
+import org.apache.log4j.Logger;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Time {
-   // private static final Logger log = Logger.getLogger(Time.class);
+    private static final Logger log = Logger.getLogger(Time.class);
 
     private Calendar calendar = Calendar.getInstance();
     private Date date = new Date();
@@ -34,11 +36,11 @@ public class Time {
         else
             setRc("Good evening");
 
-     //   log.info(getRc());
+       log.info(getRc());
     }
 
     public void ArrayDates(int day, int dayOfWeek, int dayOfMonth, Date date) {
-       // log.info("Method:ArrayDates");
+        log.info("Method:ArrayDates");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(".MM.yyyy");
         String formatDate = simpleDateFormat.format(date);
 
