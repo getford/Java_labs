@@ -6,6 +6,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="05" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax:javaee-web-api:6.0" />
+          <element id="library" level="project" name="Maven: javaee:javaee-api:5" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/05/META-INF/MANIFEST.MF" />
