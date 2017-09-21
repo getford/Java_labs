@@ -13,10 +13,10 @@ public class Firstname extends TagSupport {
         JspWriter out = pageContext.getOut();
         try {
             String in = "<label>Lastname&nbsp &nbsp</label>"
-                    + "<input name =\"lastname\" type = \"text\" width = \"150\" " + " maxlength= \"30\" ";
+                    + "<input name =\"firstname\" type = \"text\" width = \"150\" " + " maxlength= \"30\" ";
             out.print(in + (this.value.equals("") ? " " : "value =\"" + this.value + "\" />"));
         } catch (IOException e) {
-            System.out.println("stafftag.Lastname: " + e);
+            System.out.println("usertaglib.Firstname: " + e);
         }
         return SKIP_BODY;
     }

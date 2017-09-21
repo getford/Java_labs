@@ -8,10 +8,11 @@ import java.io.PrintWriter;
 
 @WebServlet(urlPatterns = "/Ttt")
 public class Ttt extends HttpServlet {
+
     @Override
     protected void service(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
-        String firstname = httpServletRequest.getParameter("fn");
-        String lastname = httpServletRequest.getParameter("ln");
+        String firstname = httpServletRequest.getParameter("firstname");
+        String lastname = httpServletRequest.getParameter("lastname");
         String sex = httpServletRequest.getParameter("sex");
 
         PrintWriter printWriter = httpServletResponse.getWriter();
@@ -20,7 +21,11 @@ public class Ttt extends HttpServlet {
                         "<br/>Lastname: " + lastname +
                         "<br/>Sex: " + sex
         );
-        printWriter.close();
+        // printWriter.close();
+    }
 
+    public Ttt() {
+        super();
+        System.out.println("Constructor");
     }
 }

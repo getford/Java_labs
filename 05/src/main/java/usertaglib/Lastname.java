@@ -14,13 +14,13 @@ public class Lastname extends TagSupport {
         JspWriter out = pageContext.getOut();
         try
         {
-            String in = "<label>Surname&nbsp &nbsp</label>"
-                    + "<input name =\"surname\" type = \"text\" width = \"150\" " + " maxlength= \"30\" ";
+            String in = "<label>Lastname&nbsp &nbsp</label>"
+                    + "<input name =\"lastname\" type = \"text\" width = \"150\" " + " maxlength= \"30\" ";
             out.print(in + (this.value.equals("") ? " " : "value =\"" + this.value + "\" />"));
         }
         catch (IOException e)
         {
-            System.out.println("stafftag.Surname: " + e);
+            System.out.println("usertaglib.Lastname: " + e);
         }
         return SKIP_BODY;
     }

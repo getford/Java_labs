@@ -5,7 +5,7 @@
     <title>05 - taglib</title>
 </head>
 <body>
-<usr:dossier action="Ttt">
+<usr:dossier action="/Ttt">
     <usr:firstname value="Vladimir"/>
     <br/>
     <usr:lastname value="Zhigalo"/>

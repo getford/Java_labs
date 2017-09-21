@@ -15,13 +15,13 @@ public class Dossier extends TagSupport {
     public int doStartTag() throws JspException {
         //return super.doStartTag();
 
-        String in = "<form id =\"f01\" name = \"f01\" method = \"post\""
+        String in = "<form id =\"f01\" name = \"f01\" method = \"get\""
                 + " action= \"" + this.action + "\">";
         JspWriter out = pageContext.getOut();
         try {
             out.print(in);
         } catch (IOException e) {
-            System.out.println("stafftag.Dossier: " + e);
+            System.out.println("usertaglib.Dossier: " + e);
         }
         return EVAL_BODY_INCLUDE;
     }
@@ -35,7 +35,7 @@ public class Dossier extends TagSupport {
         try {
             out.print(in);
         } catch (IOException e) {
-            System.out.println("stafftag.Dossier: " + e);
+            System.out.println("usertaglib.Dossier: " + e);
         }
         return EVAL_BODY_INCLUDE;
     }

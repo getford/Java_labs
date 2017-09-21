@@ -7,8 +7,6 @@ import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
 public class Sex extends TagSupport {
-    private static String in = "<label>Sex:&nbsp &nbsp</label><br/>" + "Male <input name =\"sex\" type = \"radio\" value=\"male\"/>";
-    private static String female = "<br/><label>Female&nbsp</label>" + "<input name =\"sex\" type = \"radio\" value=\"female\"/>";
     private Boolean value = false;
 
     @Override
@@ -16,7 +14,9 @@ public class Sex extends TagSupport {
         JspWriter out = pageContext.getOut();
         try
         {
-            out.print(in );
+            String in = "<label>Sex:&nbsp &nbsp</label><br/>" + "Male <input name =\"sex\" type = \"radio\" value=\"male\"/>";
+            out.print(in);
+            String female = "<br/><label>Female&nbsp</label>" + "<input name =\"sex\" type = \"radio\" value=\"female\"/>";
             out.print(female);
         }
         catch (IOException e)
