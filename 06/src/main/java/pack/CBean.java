@@ -1,7 +1,10 @@
+package pack;
+
 public class CBean {
-    private String Value1;
-    private String Value2;
-    private String Value3;
+    private String atrCBean;
+    private String Value1 = null;
+    private String Value2 = null;
+    private String Value3 = null;
 
     public String getValue1() {
         return Value1;
@@ -25,5 +28,13 @@ public class CBean {
 
     public void setValue3(String value3) {
         Value3 = value3;
+    }
+
+    public String getAtrCBean() {
+        return atrCBean;
+    }
+
+    public void setAtrCBean(String atrCBean) {
+        this.atrCBean = atrCBean;
     }
 }
