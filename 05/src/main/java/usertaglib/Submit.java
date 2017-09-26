@@ -2,7 +2,6 @@ package usertaglib;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
-import javax.servlet.jsp.tagext.JspTag;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
@@ -12,14 +11,11 @@ public class Submit extends TagSupport {
     @Override
     public int doStartTag() throws JspException {
         JspWriter out = pageContext.getOut();
-        try
-        {
+        try {
             String in = "<input type = \"submit\" value = \"OK\" />";
             out.print(in);
-        }
-        catch (IOException e)
-        {
-            System.out.println("stafftag.Sex: " + e);
+        } catch (IOException e) {
+            System.out.println("stafftag.Submit: " + e);
         }
         return SKIP_BODY;
     }

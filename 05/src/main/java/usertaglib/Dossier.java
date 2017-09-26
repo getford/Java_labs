@@ -7,15 +7,12 @@ import java.io.IOException;
 
 public class Dossier extends TagSupport {
     private String action = "";
-    private static String in = "<label>Surname&nbsp &nbsp</label>"
-            + "<input name =\"surname \" type = \"text\" width = \"150\" "
-            + " maxlength= \"30\" ";
 
     @Override
     public int doStartTag() throws JspException {
         //return super.doStartTag();
 
-        String in = "<form id =\"f01\" name = \"f01\" method = \"get\""
+        String in = "<form id =\"f01\" name = \"f01\" method = \"post\""
                 + " action= \"" + this.action + "\">";
         JspWriter out = pageContext.getOut();
         try {
@@ -28,8 +25,9 @@ public class Dossier extends TagSupport {
 
     @Override
     public int doEndTag() throws JspException {
-       // return super.doEndTag();
-
+        // return super.doEndTag();
+        int i = new Integer(10);
+        System.out.println(i);
         String in = "</form>";
         JspWriter out = pageContext.getOut();
         try {
