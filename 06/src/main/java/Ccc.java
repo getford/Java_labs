@@ -44,7 +44,6 @@ public class Ccc extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         setRadioCBean(req.getParameter("radio"));
-
         if (getRadioCBean().equals("new")) {
             CBean cBean = new CBean();
 

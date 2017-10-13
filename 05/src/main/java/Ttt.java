@@ -15,9 +15,6 @@ public class Ttt extends HttpServlet {
         String lastname = httpServletRequest.getParameter("lastname");
         String sex = httpServletRequest.getParameter("sex");
 
-
-        
-
         PrintWriter printWriter = httpServletResponse.getWriter();
         printWriter.println(
                 "<br/>Firstname: " + firstname +

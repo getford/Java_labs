@@ -91,7 +91,3 @@ public class Sss extends HttpServlet {
 
     }
 }
-
-/*
-Задание 6: https://toster.ru/q/349134
- */
