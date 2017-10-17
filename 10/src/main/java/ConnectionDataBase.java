@@ -1,6 +1,7 @@
+import com.mysql.jdbc.Connection;
+
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Connection;
 
 class ConnectionDataBase {
     private Connection connection;
@@ -10,7 +11,8 @@ class ConnectionDataBase {
     private static final String password = "";
 
     ConnectionDataBase() throws SQLException, ClassNotFoundException {
-        setConnection(DriverManager.getConnection(url, login, password));
+        Class.forName("com.mysql.jdbc.Driver");
+        setConnection((Connection) DriverManager.getConnection(url, login, password));
         if (connection != null) {
             System.out.println("Access granted.");
         } else {
@@ -18,7 +20,7 @@ class ConnectionDataBase {
         }
     }
 
-    void closeConnect() {
+    void close() {
         try {
             getConnection().close();
         } catch (SQLException ex) {

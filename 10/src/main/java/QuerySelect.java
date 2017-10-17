@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,7 +15,7 @@ public class QuerySelect extends HttpServlet {
     private ArrayList<Values> valuesArrayList = new ArrayList<Values>();
 
     @Override
-    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
         String query = "SELECT * FROM `values`";
 
         try {
@@ -27,22 +28,21 @@ public class QuerySelect extends HttpServlet {
                         new Values(resultSet.getInt(1), resultSet.getInt(2), resultSet.getString(3)));
             }
 
+            PrintWriter printWriter = httpServletResponse.getWriter();
+
+            printWriter.println("ID\tValue\tNote\n");
+            for (Values val : valuesArrayList) {
+                printWriter.println(val.getId() + "\t" + val.getValue() + "\t" + val.getNote());
+            }
+
             resultSet.close();
             statement.close();
-            connectionDataBase.closeConnect();
+            connectionDataBase.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    public ArrayList<Values> getValuesArrayList() {
-        return valuesArrayList;
-    }
-
-    public void setValuesArrayList(ArrayList<Values> valuesArrayList) {
-        this.valuesArrayList = valuesArrayList;
     }
 }

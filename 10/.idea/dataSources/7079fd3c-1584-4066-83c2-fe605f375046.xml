@@ -14,24 +14,33 @@
     <schema id="8" parent="1" name="task3"/>
     <schema id="9" parent="1" name="wordpress"/>
     <table id="10" parent="2" name="values"/>
-    <column id="11" parent="10" name="id">
+    <routine id="11" parent="2" name="lb10Procedure">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="12" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="12" parent="10" name="value">
+    <column id="13" parent="10" name="value">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="13" parent="10" name="note">
+    <column id="14" parent="10" name="note">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="14" parent="10" name="PRIMARY">
+    <key id="15" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <argument id="16" parent="11" name="v">
+      <DataType>varchar(10)|0</DataType>
+    </argument>
+    <argument id="17" parent="11" name="n">
+      <DataType>varchar(50)|0</DataType>
+    </argument>
   </database-model>
 </dataSource>
