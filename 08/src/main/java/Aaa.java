@@ -1,43 +1,73 @@
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.methods.GetMethod;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+import java.util.Map;
 
 @WebServlet(urlPatterns = "/Aaa")
 public class Aaa extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-/*        PrintWriter printWriter = resp.getWriter();
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        sendResponse(response);
+    }
 
-        HttpClient httpClient = new HttpClient();*/
-        String uri = "http://" + req.getServerName() + ":" + req.getServerPort() + "/Bbb";
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        sendResponse(response);
+    }
 
-        req.setAttribute("value1", "value1");
-        req.setAttribute("value2", "value2");
-        req.setAttribute("value3", "value3");
+    private void sendResponse(HttpServletResponse response) {
+        try {
+            sendPost(response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-       /* printWriter.println(
-                "Param1: " + req.getParameter("value1") +
-                "<br/>Param2: " + req.getParameter("value2") +
-                        "<br/>Param3: " + req.getParameter("value3"));
+    private void sendPost(HttpServletResponse response) throws Exception {
+        String inputLine;
+        PrintWriter pw = response.getWriter();
+        URL obj = new URL("http://localhost:8080/Bbb");
+        HttpURLConnection httpURLConnection = (HttpURLConnection) obj.openConnection();
 
-        GetMethod getMethod = new GetMethod();
-        getMethod.addRequestHeader("Header1", "header1");
-        getMethod.addRequestHeader("Header2", "header2");
-        getMethod.addRequestHeader("Header3", "header3");
+        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setRequestProperty("ErsHeader1", "ERS header 1 value");
+        httpURLConnection.setRequestProperty("ErsHeader2", "ERS header 2 value");
+        httpURLConnection.setRequestProperty("ErsHeader3", "ERS header 3 value");
+        String urlParameters = "queryParam1=queryParam1value&queryParam2=queryParam2value&queryParam3=queryParam3value";
 
-        httpClient.executeMethod(getMethod);
-*/
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher(uri);
-        requestDispatcher.forward(req, resp);
+        httpURLConnection.setUseCaches(false);
+        httpURLConnection.setDoInput(true);
+        httpURLConnection.setDoOutput(true);
+
+        DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
+
+        pw.println("Response Code: " + httpURLConnection.getResponseCode());
+        pw.println();
+        pw.println("Response:");
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+
+        while ((inputLine = in.readLine()) != null) pw.println(inputLine);
+
+        Map<String, List<String>> headerNames = httpURLConnection.getHeaderFields();
+
+        pw.println();
+        pw.println("Response Headers (Servlet Aaa):");
+
+        for (Map.Entry<String, List<String>> header : headerNames.entrySet()) {
+            pw.println(header.getKey() + ": " + header.getValue());
+        }
+
+        in.close();
     }
 }

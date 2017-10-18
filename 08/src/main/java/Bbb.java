@@ -5,13 +5,39 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 @WebServlet(urlPatterns = "/Bbb")
 public class Bbb extends HttpServlet {
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter printWriter = resp.getWriter();
 
-        printWriter.println(req.getAttribute("value1"));
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        handleRequest(request, response);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        handleRequest(request, response);
+    }
+
+    private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Enumeration<String> headerNames = request.getHeaderNames();
+        PrintWriter pw = response.getWriter();
+        pw.println("Headers from Servlet Bbb: ");
+
+        while (headerNames.hasMoreElements()) {
+            String key = headerNames.nextElement();
+            String value = request.getHeader(key);
+            pw.println(key + ": " + value);
+        }
+
+        pw.println();
+        pw.println("Query params from ServletB:");
+        pw.println("queryParam1: " + request.getParameter("queryParam1"));
+        pw.println("queryParam2: " + request.getParameter("queryParam2"));
+        pw.println("queryParam3: " + request.getParameter("queryParam3"));
+
+        response.setHeader("Hello111FromServletB", "sample value");
+        response.setHeader("Hello222FromServletB", "sample value");
     }
 }

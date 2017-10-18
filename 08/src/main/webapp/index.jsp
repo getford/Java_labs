@@ -4,14 +4,8 @@
     <title>Index</title>
 </head>
 <body>
-<form action="/Aaa" method="post">
-    <input type="text" name="value1" placeholder="param1">
-    <br/>
-    <input type="text" name="value2" placeholder="param2">
-    <br/>
-    <input type="text" name="value3" placeholder="param3">
-    <br/>
-    <input type="submit" name="click">
-</form>
+<a href="http://localhost:8080/Aaa"> GO TO Aaa SERVLET</a>
+<br/>
+<a href="http://localhost:8080/Bbb"> GO TO Bbb SERVLET</a>
 </body>
 </html>
