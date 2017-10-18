@@ -23,6 +23,7 @@ public class QuerySelect extends HttpServlet {
             Statement statement = connectionDataBase.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
+            valuesArrayList.clear();
             while (resultSet.next()) {
                 valuesArrayList.add(
                         new Values(resultSet.getInt(1), resultSet.getInt(2), resultSet.getString(3)));
