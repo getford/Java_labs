@@ -13,24 +13,7 @@ import java.util.Map;
 public class Aaa extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        sendResponse(response);
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        sendResponse(response);
-    }
-
-    private void sendResponse(HttpServletResponse response) {
-        try {
-            sendPost(response);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void sendPost(HttpServletResponse response) throws Exception {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String inputLine;
         PrintWriter pw = response.getWriter();
         URL obj = new URL("http://localhost:8080/Bbb");

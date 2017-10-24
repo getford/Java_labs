@@ -11,16 +11,8 @@ import java.util.Enumeration;
 public class Bbb extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        handleRequest(request, response);
-    }
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        handleRequest(request, response);
-    }
-
-    private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Enumeration<String> headerNames = request.getHeaderNames();
         PrintWriter pw = response.getWriter();
         pw.println("Headers from Servlet Bbb: ");
@@ -37,7 +29,7 @@ public class Bbb extends HttpServlet {
         pw.println("queryParam2: " + request.getParameter("queryParam2"));
         pw.println("queryParam3: " + request.getParameter("queryParam3"));
 
-        response.setHeader("Hello111FromServletB", "sample value");
-        response.setHeader("Hello222FromServletB", "sample value");
+        response.setHeader("SERVLET Aaa", "sample value");
+        response.setHeader("SERVLET Bbb", "sample value");
     }
 }
