@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+    <script type="text/javascript" src="script/Header.js"></script>
+    <script type="text/javascript" src="script/XML.js"></script>
+    <script type="text/javascript" src="script/JSON.js"></script>
+</head>
+<body>
+<h4>AJAX</h4>
+<form action="#" method="POST">
+    <input name="x" type="text" size="3" maxlength="3" placeholder="x"/>
+    <input name="y" type="text" size="3" maxlength="3" placeholder="y"/>
+    <input name="BAdd" value="Add" type="button" size="10" maxlength="10" onclick="OnClick_Header(x, y, z)"/>
+    <input name="z" id="z" type="text" value="0" size="7" title="z"/>
+</form>
+<br/>
+<h4>XML</h4>
+<br/>
+<form name="FXML" action="#" method="POST">
+    <input name="n" type="text" value="10" size="2" maxlength="2" placeholder="n"/>
+    <input name="BRand" value="Rand" type="button" size="10" maxlength="10"
+           onclick="OnClick_XML(this.form.n.value)"/>
+    &emsp;
+    <div id="div_xml"></div>
+</form>
+<br/>
+<h4>JSON</h4>
+<form name="FXML" action="#" method="POST">
+    <input name="n" type="text" value="10" size="2" maxlength="2" placeholder="n"/>
+    <input name="BRand" value="Rand" type="button" size="10" maxlength="10"
+           onclick="OnClick_JSON(this.form.n.value/*, document.getElementById('json').innerHTML*/)"/>
+    &emsp;
+    <div id="div_json"></div>
+</form>
+
+</body>
+</html>
