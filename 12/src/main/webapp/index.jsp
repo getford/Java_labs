@@ -6,6 +6,11 @@
 <body>
 <h2>Index</h2>
 <br/>
-<a href="/sss">go to Sss Servlet</a>
+<p>
+    <a href="/sss">go to Sss Servlet</a>
+</p>
+<p>
+    <a href="login.jsp">FORM-auth (task 2)</a>
+</p>
 </body>
 </html>
