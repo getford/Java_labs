@@ -5,7 +5,7 @@
 </head>
 <body>
 <%
-    String username = request.getRemoteUser();
+    String username = request.getParameter("j_username");
 %>
 
 <span>Hello, <%=username%></span>
