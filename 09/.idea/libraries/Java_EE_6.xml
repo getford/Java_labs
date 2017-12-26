@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Java EE 6">
+    <CLASSES>
+      <root url="jar://D:/Tomcat/apache-tomcat-9.0.0.M26/lib/javax.servlet.jsp.jar!/" />
+      <root url="jar://D:/Tomcat/apache-tomcat-9.0.0.M26/lib/servlet-api.jar!/" />
+      <root url="jar://D:/Tomcat/apache-tomcat-9.0.0.M26/lib/httpclient-cache-4.5.3.jar!/" />
+      <root url="jar://D:/Tomcat/apache-tomcat-9.0.0.M26/lib/httpclient-4.5.3.jar!/" />
+      <root url="jar://D:/Tomcat/apache-tomcat-9.0.0.M26/lib/httpcore-4.4.6.jar!/" />
+      <root url="jar://D:/Tomcat/apache-tomcat-9.0.0.M26/lib/httpclient-win-4.5.3.jar!/" />
+      <root url="jar://D:/Tomcat/apache-tomcat-9.0.0.M26/lib/httpmime-4.5.3.jar!/" />
+      <root url="jar://D:/Tomcat/apache-tomcat-9.0.0.M26/lib/org.apache.commons.httpclient.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

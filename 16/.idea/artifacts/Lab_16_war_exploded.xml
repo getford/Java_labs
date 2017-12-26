@@ -1,0 +1,27 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Lab_16:war exploded">
+    <output-path>$PROJECT_DIR$/target/Lab_16</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Lab_16" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat7-websocket:7.0.56" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-websocket-api:7.0.56" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-catalina:7.0.56" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-servlet-api:7.0.56" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:7.0.56" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-api:7.0.56" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-coyote:7.0.56" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:7.0.56" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util:7.0.56" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/Lab_16/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="Lab_16/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <display-name>LP_Lab09</display-name>
+    <context-param>
+        <param-name>URL1</param-name>
+        <param-value>http://firstURL</param-value>
+    </context-param>
+    <context-param>
+        <param-name>URL2</param-name>
+        <param-value>http://secondURL</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>Servlet</servlet-name>
+        <servlet-class>main.servlets.Servlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Servlet</servlet-name>
+        <url-pattern>/sss</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Ccc</servlet-name>
+        <servlet-class>main.servlets.Ccc</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Ccc</servlet-name>
+        <url-pattern>/ccc</url-pattern>
+    </servlet-mapping>
+
+
+    <filter>
+        <filter-name>F1</filter-name>
+        <filter-class>main.filters.F1</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>F1</filter-name>
+        <url-pattern>/ccc</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>F2</filter-name>
+        <filter-class>main.filters.F2</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>F2</filter-name>
+        <url-pattern>/ccc.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>F3</filter-name>
+        <filter-class>main.filters.F3</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>F3</filter-name>
+        <url-pattern>/ccc</url-pattern>
+    </filter-mapping>
+    
+    <listener>
+        <listener-class>main.listener.L1</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>main.listener.L2</listener-class>
+    </listener>
+</web-app>
